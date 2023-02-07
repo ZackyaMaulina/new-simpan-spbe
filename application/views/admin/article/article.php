@@ -8,7 +8,7 @@
                     <span class="beranda">Semua User</span>
                 </div>
                 <div class="right">
-                    <a class="btn1" href="">
+                    <a class="btn1" href="<?=base_url('admin/articles/edit') ?>">
                         <i class="bi bi-pencil-square"></i>
                         Tambah Baru
                     </a>

@@ -22,37 +22,37 @@
             <table id="myTable" class="table">
                 <thead>
                     <tr>
-                        <th style="width: 80px;">
+                        <th class="text-center" style="width: 80px;">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
                         </th>
-                        <th class="title" scope="col">Username</th>
-                        <th class="writer" scope="col">Email</th>
-                        <th class="satus" scope="col">Status User</th>
-                        <th class="aksi" scope="col">Aksi</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Status User</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($users as $user): ?>
                         <tr class="col1">
-                            <th scope="col">
+                            <td class="text-center">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                            </th>
-                            <th scope="col">
+                            </td>
+                            <td>
                                 <?= $user['username'] ?>
-                            </th>
-                            <th scope="col">
+                            </td>
+                            <td>
                                 <?= $user['email'] ?>
-                            </th>
-                            <th scope="col">
+                            </td>
+                            <td>
                                 <?= $user['user_type'] ?>
-                            </th>
-                            <th scope="col">
+                            </td>
+                            <td>
                                 <a href="<?= base_url('admin/users/edit/' . $user['user_id']) ?>"><i
                                         class="bi bi-pencil-square"></i></a>
                                 <a href=""><i class="bi bi-trash-fill"></i></a>
-                            </th>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
