@@ -7,13 +7,9 @@
                     <span class="beranda">Semua User</span>
                 </div>
                 <div class="right">
-                    <a class="btn1" href="">
+                    <a class="btn1" href="<?=base_url('admin/users/edit') ?>">
                         <i class="bi bi-pencil-square"></i>
                         Tambah Baru
-                    </a>
-                    <a class="btn2" href="">
-                        <i class="bi bi-trash-fill"></i>
-                        Hapus Item Terpilih
                     </a>
                 </div>
             </div>
@@ -22,10 +18,7 @@
             <table id="myTable" class="table">
                 <thead>
                     <tr>
-                        <th class="text-center" style="width: 80px;">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                        </th>
+                        <th class="text-center" style="width: 80px;">No.</th>
                         <th>Username</th>
                         <th>Email</th>
                         <th>Status User</th>
@@ -33,11 +26,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($users as $user): ?>
+                    <?php $no = 1; foreach ($users as $user): ?>
                         <tr class="col1">
                             <td class="text-center">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
+                            <?=$no ?>
                             </td>
                             <td>
                                 <?= $user['username'] ?>
@@ -51,10 +43,10 @@
                             <td>
                                 <a href="<?= base_url('admin/users/edit/' . $user['user_id']) ?>"><i
                                         class="bi bi-pencil-square"></i></a>
-                                <a href=""><i class="bi bi-trash-fill"></i></a>
+                                <a href="<?= base_url()?>admin/users/delete/<?= $user['user_id']?>"><i class="bi bi-trash-fill"></i></a>
                             </td>
                         </tr>
-                    <?php endforeach; ?>
+                    <?php  $no++; endforeach; ?>
                 </tbody>
             </table>
         </div>

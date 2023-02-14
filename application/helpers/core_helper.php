@@ -10,3 +10,60 @@ if (!function_exists('printr')) {
         return;
     }
 }
+
+if (!function_exists('get_frontend_gravatar')) {
+    function get_frontend_gravatar($image)
+    {
+        $img = $image;
+        $imgdefault ='uploads/images/profile/default.png';
+
+        if ($image !== null && $image !== '' && file_exists($img)) {
+            return base_url($img);
+        }
+        return base_url($imgdefault);
+    }
+}
+
+/**
+ * Get Excerpt helper
+ * @author Based on http://www.phpsnaps.com/snaps/view/get-excerpt-from-string/
+ * @version 1.0
+ */
+if (!function_exists('get_excerpt')) {
+    function get_excerpt($str = NULL, $max_lenght) {
+        if(strlen($str) > $max_lenght) {
+            $excerpt    = substr($str, 0, $max_lenght-3);
+            $last_space = strrpos($excerpt, ' ');
+            $excerpt    = substr($excerpt, 0, $last_space);
+            $excerpt   .= '...';
+        } else {
+            $excerpt = $str;
+        }
+
+        return strip_tags($excerpt);
+    }
+}
+
+/**
+ * Konversi Tanggal
+ * @author Masriadi
+ * @version 1.0
+ * example : short_date('D, j M Y', 2016-12-13) result : Wed, 13 Dec 2016
+ */
+// if (!function_exists('long_date')) {
+//     function long_date($format, $date = "now", $language_id = 'id')
+//     {
+//         $en = array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+//         $lang = explode(',', lang('lang_date'));
+//         return str_replace($en, $lang, date($format, strtotime($date)));
+//     }
+// }
+
+// if (!function_exists('short_date')) {
+//     function short_date($format, $date = "now", $language_id = 'id')
+//     {
+//         $en = array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+//         $lang = explode(',', lang('lang_date_short'));
+//         return str_replace($en, $lang, date($format, strtotime($date)));
+//     }
+// }

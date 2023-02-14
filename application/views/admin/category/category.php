@@ -8,13 +8,9 @@
                     <span class="beranda">Semua Kategori</span>
                 </div>
                 <div class="right">
-                    <a class="btn1" href="">
+                    <a class="btn1" href="<?=base_url('admin/categories/edit')?>">
                         <i class="bi bi-pencil-square"></i>
                         Tambah Baru
-                    </a>
-                    <a class="btn2" href="">
-                        <i class="bi bi-trash-fill"></i>
-                        Hapus Item Terpilih
                     </a>
                 </div>
             </div>
@@ -23,31 +19,27 @@
             <table id="myTable" class="table">
                 <thead>
                     <tr>
-                        <th class="text-center" style="width: 80px;">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                        </th>
+                        <th class="text-center" style="width: 80px;">No.</th>
                         <th>Nama Kategori</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($categories as $category): ?>
+                    <?php $no = 1;
+                    foreach ($categories as $category): ?>
                         <tr>
                             <td class="text-center">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
+                                <?= $no ?>
                             </td>
                             <td>
                                 <?= $category['category_name'] ?>
                             </td>
                             <td class="text-center">
-                                <a href="<?= base_url('admin/article/edit/' . $category['category_id']) ?>"><i
-                                        class="bi bi-pencil-square"></i></a>
-                                <a href=""><i class="bi bi-trash-fill"></i></a>
+                                <a href="<?= base_url() ?>admin/categories/delete/<?= $category['category_id'] ?>"><i
+                                        class="bi bi-trash-fill"></i></a>
                             </td>
                         </tr>
-                    <?php endforeach; ?>
+                        <?php $no++; endforeach; ?>
                 </tbody>
             </table>
         </div>

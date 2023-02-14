@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Categories extends CI_Controller
+class Categories extends Admin_Controller
 {
 
     public function __construct()
@@ -18,12 +18,45 @@ class Categories extends CI_Controller
         // die();
 
         // Kirim data users ke view      
-        $this->data['subview'] = 'admin/category/category';  
+        $this->data['subview'] = 'admin/category/category';
         $this->load->view('admin/_layout_main', $this->data);
     }
 
-    public function edit()
+    public function edit($id = NULL)
     {
-        echo "ini halaman edit";
+        $where = array('category_id' => $id);
+        $data['app_categories'] = $this->category_m->save($where, 'category_id');
+
+        if ($this->input->post()) {
+            $data = [
+                'category_name' => $this->input->post('category_name'),
+                // 'content' => $this->input->post('content'),
+                // 'category_id' => $this->input->post('category_id'),
+                // 'comment_status' => 1,
+                // 'user_id' => 120,
+            ];
+
+            // printr($data);
+            // die();
+
+            if ($this->category_m->save($data, NULL)) {
+                redirect('admin/categories');
+            } else {
+                printr('gagal');
+            }
+
+            
+        }
+
+
+        $this->data['subview'] = 'admin/category/edit';
+        $this->load->view('admin/_layout_main', $this->data);
+    }
+
+    public function delete($id)
+    {
+        $this->category_m->delete($id);
+        redirect('admin/categories');
+
     }
 }

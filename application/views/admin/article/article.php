@@ -12,10 +12,6 @@
                         <i class="bi bi-pencil-square"></i>
                         Tambah Baru
                     </a>
-                    <a class="btn2" href="">
-                        <i class="bi bi-trash-fill"></i>
-                        Hapus Item Terpilih
-                    </a>
                 </div>
             </div>
         </div>
@@ -23,10 +19,7 @@
             <table id="myTable" class="table">
                 <thead>
                     <tr>
-                        <th class="text-center" style="width: 80px;">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                        </th>
+                        <th class="text-center" style="width: 80px;">No.</th>
                         <th>Judul</th>
                         <th>Ditulis Oleh</th>
                         <th>Kategori</th>
@@ -34,11 +27,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($articles as $article): ?>
+                    <?php $no = 1; foreach ($articles as $article): ?>
                         <tr>
                             <td class="text-center">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
+                                <?=$no ?>
                             </td>
                             <td>
                                 <?= $article['title'] ?>
@@ -50,12 +42,12 @@
                                 <?= $article['category_name'] ?>
                             </td>
                             <td class="text-center">
-                                <a href="<?= base_url('admin/article/edit/' . $article['user_id']) ?>"><i
+                                <a href="<?= base_url()?>admin/articles/edit/<?= $article['article_id']?>"><i
                                         class="bi bi-pencil-square"></i></a>
-                                <a href=""><i class="bi bi-trash-fill"></i></a>
+                                <a href="<?= base_url()?>admin/articles/delete/<?= $article['article_id']?>"><i class="bi bi-trash-fill"></i></a>
                             </td>
                         </tr>
-                    <?php endforeach; ?>
+                    <?php $no++; endforeach; ?>
                 </tbody>
             </table>
         </div>

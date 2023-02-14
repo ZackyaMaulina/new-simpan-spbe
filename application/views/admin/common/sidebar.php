@@ -39,7 +39,7 @@
                 </a>
                 <ul class="forum-show">
                     <li><a href="<?=base_url('admin/forums') ?>">Semua Forum</a></li>
-                    <li><a href="">Tambah Forum</a></li>
+                    <li><a href="<?=base_url('admin/forums/edit') ?>">Tambah Forum</a></li>
                     <li><a href="<?=base_url('admin/categories') ?>">Kategori</a></li>
                     <li><a href="">Komentar</a></li>
                     <li><a href="">Jawaban</a></li>
