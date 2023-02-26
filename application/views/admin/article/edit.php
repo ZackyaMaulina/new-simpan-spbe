@@ -30,7 +30,7 @@
             <div class="card2">
                 <div class="image">
                     <?php if ($result['image'] !== ''): ?>
-                        <img style="width: 100%;" src="<?= base_url($result['image']) ?>" alt="">
+                        <img style="width: 100%;" src="<?= base_url($result['article_image']) ?>" alt="">
                     <?php else: ?>
                         <i class="bi bi-image-fill"></i>
                     <?php endif; ?>
@@ -39,7 +39,7 @@
 
             <div class="card2">
 
-                <input type="file" name="image" class="form-control" size="20" required="" />
+                <input type="file" name="image" class="form-control" size="20" />
                 <!-- <br /><br />
                 <input type="submit" value="upload" /> -->
                 </form>
@@ -69,10 +69,10 @@
             </div>
             <div class="card6">
                 <div class="btn-card6">
-                    <a class="btn1" href="<?=base_url('admin/articles')?>">
+                    <a class="btn btn-default" href="<?= base_url('admin/articles') ?>">
                         <i class="bi bi-reply-fill"> Kembali</i>
                     </a>
-                    <button type="submit"><i class="bi bi-cloud-upload-fill"> Simpan</i></button>
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-cloud-upload-fill"> Simpan</i></button>
                 </div>
             </div>
         </div>
@@ -83,12 +83,15 @@
 <script>
     tinymce.init({
         selector: '#mytextarea',
-        content_css: "<?=ADMIN_ASSETS_URL?>tinymce.content.css",
+        content_css: "<?= ADMIN_ASSETS_URL ?>tinymce.content.css",
         height: 400,
     });
 </script>
 
 <style>
+    .mce-panel {
+        width: 100%;
+    }
     .form input,
     .form textarea {
         width: 100%;

@@ -36,4 +36,6 @@ class category_m extends CI_Model
         $this->db->delete('app_categories');
         return TRUE;
     }
+
+    
 }

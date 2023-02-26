@@ -20,8 +20,8 @@
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 80px;">No.</th>
-                        <th>Nama Kategori</th>
-                        <th>Aksi</th>
+                        <th >Nama Kategori</th>
+                        <th style="text-align:center;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +34,7 @@
                             <td>
                                 <?= $category['category_name'] ?>
                             </td>
-                            <td class="text-center">
+                            <td class="text-center" style="text-align:center;">
                                 <a href="<?= base_url() ?>admin/categories/delete/<?= $category['category_id'] ?>"><i
                                         class="bi bi-trash-fill"></i></a>
                             </td>

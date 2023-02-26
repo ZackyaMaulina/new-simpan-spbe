@@ -23,7 +23,7 @@
                         <th>Judul Forum</th>
                         <th>Ditulis Oleh</th>
                         <th>Kategori</th>
-                        <th>Aksi</th>
+                        <th style="text-align:center;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,10 +41,10 @@
                             <td>
                                 <?= $forum['category_name'] ?>
                             </td>
-                            <td class="text-center">
-                                <a href="<?= base_url('admin/forums/edit/' . $forum['forums_id']) ?>"><i
+                            <td class="text-center" style="text-align:center;">
+                                <a href="<?= base_url('admin/forums/edit/' . $forum['forum_id']) ?>"><i
                                         class="bi bi-pencil-square"></i></a>
-                                <a href="<?= base_url()?>admin/forums/delete/<?= $forum['forums_id']?>"><i class="bi bi-trash-fill"></i></a>
+                                <a href="<?= base_url()?>admin/forums/delete/<?= $forum['forum_id']?>"><i class="bi bi-trash-fill"></i></a>
                             </td>
                         </tr>
                     <?php  $no++; endforeach; ?>

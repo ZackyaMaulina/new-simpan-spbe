@@ -17,24 +17,31 @@
     <meta name="description" content="<?php echo $header_meta['meta_description']; ?>">
     <meta name="keywords" content="<?php echo $header_meta['meta_keyword']; ?>">
 
-    <script type="text/javascript" src="<?php echo ADMIN_ASSETS_URL; ?>js/libs/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo ADMIN_ASSETS_URL; ?>js/libs/tinymce/tinymce.min.js"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link href="<?php echo ADMIN_ASSETS_URL; ?>index.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 
-    <!-- Load dynamic header script from plugin -->
-   
+    <!-- CSS -->
+    <link href="//cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="//cdn.datatables.net/1.13.2/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="<?php echo ADMIN_ASSETS_URL; ?>index.css">
+    <link rel="stylesheet" href="<?php echo ADMIN_ASSETS_URL; ?>tinymce.content.css">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="<?php echo ADMIN_ASSETS_URL; ?>tinymce/tinymce.min.js"></script>
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="<?php echo ADMIN_ASSETS_URL; ?>img/favicon/favicon.ico">
-    <link rel="shortcut icon" href="<?php echo ADMIN_ASSETS_URL; ?>img/favicon/icon.png">
-    <link rel="shortcut icon" sizes="72x72" href="<?php echo ADMIN_ASSETS_URL; ?>img/favicon/icon-72x72.png">
-    <link rel="shortcut icon" sizes="114x114" href="<?php echo ADMIN_ASSETS_URL; ?>img/favicon/icon-114x114.png">
-    
+    <link rel="shortcut icon" href="<?php echo ADMIN_ASSETS_URL; ?>img/favicon/kuansing-icon.png">
+    <link rel="shortcut icon" sizes="72x72" href="<?php echo ADMIN_ASSETS_URL; ?>img/favicon/kuansing-icon-72x72.png">
+    <link rel="shortcut icon" sizes="114x114"
+        href="<?php echo ADMIN_ASSETS_URL; ?>img/favicon/kuansing-icon-114x114.png">
 
 </head>
 
@@ -51,7 +58,10 @@
         <div class="navbar-links">
             <ul class="navbar-nav">
                 <?php if (isset($this->session->userdata['frontend_loggedin'])): ?>
-                    <li><a class="" href="forum.html">Forum</a></li>
+                    <li><a href="<?php echo site_url('helpdesk'); ?>">Help Desk</a></li>
+                <?php endif; ?>
+                <?php if (isset($this->session->userdata['frontend_loggedin'])): ?>
+                    <li><a href="<?php echo site_url('forums'); ?>">Forum</a></li>
                 <?php endif; ?>
                 <?php if (isset($this->session->userdata['frontend_loggedin'])): ?>
                     <li><a href="<?= site_url('articles') ?>">Artikel</a>
@@ -59,14 +69,14 @@
                 <?php else: ?>
                     <li><a href="#article">Artikel</a></li>
                 <?php endif; ?>
-                <li><a class="active" href="<?= base_url() ?>">Beranda</a></li>
+                <li><a class="" href="<?= base_url() ?>">Beranda</a></li>
             </ul>
             <?php if (isset($this->session->userdata['frontend_loggedin'])): ?>
                 <div class="button">
                     <button type="button"><a class="" href="<?= site_url('user/logout') ?>">Keluar</a></button>
                 </div>
                 <div class="icon">
-                    <a href="profil.html"><i class="fa fa-user fa-2x"></i></a>
+                    <a href="<?= site_url('user/profile') ?>"><i class="fa fa-user fa-2x"></i></a>
                 </div>
             <?php else: ?>
                 <div class="button">

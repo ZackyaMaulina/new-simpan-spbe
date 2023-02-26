@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="card2">
-                <input type="file" name="image" class="form-control" size="20" required="" />
+                <input type="file" name="image" class="form-control" size="20"  />
             </div>
             <div class="card1">
                 <h1>Grup Pengguna</h1>
@@ -81,10 +81,10 @@
             </div>
             <div class="card2">
                 <div class="btn-card6">
-                    <a class="btn1" href="<?= base_url('admin/users') ?>">
+                <a class="btn btn-default" href="<?= base_url('admin/users') ?>">
                         <i class="bi bi-reply-fill"> Kembali</i>
                     </a>
-                    <button type="submit"><i class="bi bi-cloud-upload-fill"> Simpan</i></button>
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-cloud-upload-fill"> Simpan</i></button>
                 </div>
             </div>
         </div>

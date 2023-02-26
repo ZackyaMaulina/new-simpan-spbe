@@ -22,7 +22,7 @@
                         <th>Username</th>
                         <th>Email</th>
                         <th>Status User</th>
-                        <th>Aksi</th>
+                        <th style="text-align:center;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,7 +40,7 @@
                             <td>
                                 <?= $user['user_type'] ?>
                             </td>
-                            <td>
+                            <td style="text-align:center;">
                                 <a href="<?= base_url('admin/users/edit/' . $user['user_id']) ?>"><i
                                         class="bi bi-pencil-square"></i></a>
                                 <a href="<?= base_url()?>admin/users/delete/<?= $user['user_id']?>"><i class="bi bi-trash-fill"></i></a>

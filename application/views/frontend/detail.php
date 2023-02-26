@@ -35,6 +35,16 @@
           <ul>
             <li>
               <h4>
+                <?php if ($article['category_name']): ?>
+                  <a style="color: #444;" href="#"><i class="fa-solid fa-tag"></i>
+                    Kategori :
+                    <?php echo $article['category_name'] ?>
+                  </a>
+                <?php endif ?>
+              </h4>
+            </li>
+            <li>
+              <h4>
                 <?php if ($article['user_id']): ?>
                   <a style="color: #444;" href="#"><i class="fa fa-user"></i>
                     Penulis :
@@ -46,7 +56,7 @@
             <li>
               <i class="fa fa-calendar"></i>
               <h4>
-                <?= $article['date_published'] ?>
+                <?= tanggal_indonesia(date('d-m-Y', strtotime($article['date_published']))); ?>
               </h4>
             </li>
           </ul>
@@ -59,51 +69,55 @@
               <h5>53</h5>
             </li>
           </ul>
-
-          <ul>
-            <li>
-              <i class="fa fa-thumbs-down"></i>
-              <h5>0</h5>
-            </li>
-          </ul>
-
           <ul>
             <li>
               <i class="fa fa-eye"></i>
-              <h5>21</h5>
+              <h5>
+                <?php echo $article['hits'] ?>
+              </h5>
             </li>
           </ul>
         </div>
       </div>
     </section>
-   
+
   </div>
 </main>
 
 <style>
-p {
-  margin-bottom: 20px;
-  display: block;
-}
+  h1 {
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
 
-strong {
-  font-weight: bold;
-}
+  p {
+    margin-bottom: 20px;
+    display: block;
+  }
 
-em {
-  font-style: italic;
-}
+  strong {
+    font-weight: bold;
+  }
 
-ol, ul {
-  margin-left: 20px;
-  display: block;
-}
+  em {
+    font-style: italic;
+  }
 
-li {
+  ol,
+  ul {
+    margin-left: 20px;
+    display: block;
+  }
 
-}
+  .fa-heart:before {
+    position: relative;
+    top: 3.5px;
+  }
 
-
-
-
+  .fa-eye:before {
+    content: "\f06e";
+    position: relative;
+    top: 3.5px;
+  }
 </style>

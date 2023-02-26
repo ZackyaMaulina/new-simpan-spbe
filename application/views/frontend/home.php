@@ -5,7 +5,7 @@
             <p>Sistem Informasi Manajemen Pengetahuan (SIMP@N) adalah aplikasi Sistem Pemerintahan Berbasis
                 Elektronik
                 (SPBE) untuk memfasilitasi pertukaran informasi dan alih pengetahuan antar pelaksana SPBE melalui
-                Artikel, Forum dan Service Desk yang dikelompokkan berdasarkan lingkup tertentu.</p>
+                Artikel, Forum dan Help Desk yang dikelompokkan berdasarkan lingkup tertentu.</p>
             <div class="h-search-form">
 
                 <input type="text" placeholder="Apa yang ingin Anda cari?" name="search">
@@ -47,7 +47,7 @@
             </a>
         <?php endif; ?>
 
-        <a href="<?php echo site_url('user/login'); ?>">
+        <a href="<?php echo site_url('forums'); ?>">
             <div class="row">
                 <div class="main-row">
                     <div class="row-image">
@@ -60,15 +60,15 @@
                 </div>
             </div>
         </a>
-        <a href="<?php echo site_url('user/login'); ?>">
+        <a href="<?php echo site_url('helpdesk'); ?>">
             <div class="row">
                 <div class="main-row">
                     <div class="row-image">
                         <img src="<?php echo ADMIN_ASSETS_URL; ?>img/customer-care.png" alt="">
                     </div>
                     <div class="row-text">
-                        <h2>Service Desk</h2>
-                        <p>Bertanya tentang suatu topik tertentu melalui layanan Service Desk.</p>
+                        <h2>Help Desk</h2>
+                        <p>Bertanya tentang suatu topik tertentu melalui layanan Help Desk.</p>
                     </div>
                 </div>
             </div>
@@ -83,10 +83,10 @@
             <?php if ($articles):
                 foreach ($articles as $article): ?>
                     <div class="card-articles">
-                        <a href="<?= $article['article_id'] ?>">
+                        <a href="<?= site_url('articles/detail/' . $article['article_id']) ?>">
                             <?php if ($article['image']): ?>
                                 <div class="images">
-                                    <img alt="" src="<?= base_url($article['image']); ?>" />
+                                    <img alt="" src="<?= base_url($article['article_image']); ?>" />
                                 </div>
                             <?php endif; ?>
                             <h2>
@@ -107,10 +107,10 @@
         <div class="article1">
             <?php if ($articles): foreach ($articles as $article): ?>
                     <div class="card-articles">
-                        <a href="<?= $article['article_id'] ?>">
+                    <a href="<?= site_url('articles/detail/' . $article['article_id']) ?>">
                             <?php if ($article['image']): ?>
                                 <div class="images">
-                                    <img alt="" src="<?= base_url($article['image']); ?>" />
+                                    <img alt="" src="<?= base_url($article['article_image']); ?>" />
                                 </div>
                             <?php endif; ?>
                             <h2>

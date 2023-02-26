@@ -10,26 +10,31 @@
             <div>
                 <h3>Hubungi Kami</h3>
                 <i class="fa fa-map-marker"></i>
-                <?=$general['website_address']?>
+                <p>Komplek Perkantoran PEMDA Kuantan Singingi, Kel.Sungai Jering,
+                    <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Tengah, Kab. Kuantan Singingi,
+                    Riau 29566<br>
+                </p>
             </div>
             <div>
                 <i class="fa fa-phone"></i>
-                <p><?=$general['website_phone']?></p>
-             
+                <p>
+                    <?= $general['website_phone'] ?>
+                </p>
+
             </div>
             <div>
                 <i class="fa fa-envelope"></i>
-               
-                <p><?=$general['website_email']?></p>
+
+                <p>
+                    <?= $general['website_email'] ?>
+                </p>
             </div>
         </div>
     </div>
     <p class="footer-copyright">Copyright @ 2023 Simp@nSPBE</p>
 </footer>
 
-<!-- Main js -->
-<script src="<?php echo $theme_url; ?>assets/main-c15c97c2.js" type="text/javascript"></script>
-<!-- <script src="<?php echo $theme_url; ?>assets/modal.js" type="text/javascript"></script> -->
+<script type="text/javascript" src="<?php echo ADMIN_ASSETS_URL; ?>main.js"></script>
 
 </body>
 

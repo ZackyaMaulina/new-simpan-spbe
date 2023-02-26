@@ -64,13 +64,16 @@ class Users extends Admin_Controller
                 'email'     => $this->input->post('email'),
                 'name'      => $this->input->post('name'),
                 'user_type' => $this->input->post('user_type'),
-                'status'    => $this->input->post('status'),
-                'image'     => $image_uploaded,
+                'status'    => $this->input->post('status')
             ];
             
 
             if (! $id) {
 				$data['username'] = $this->input->post('username');
+			}
+
+            if ($image_uploaded != '') {
+				$data['image'] = $image_uploaded;
 			}
 
 			if ($this->input->post('password') != '') {

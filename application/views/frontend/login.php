@@ -43,7 +43,7 @@
     <div class="right">
       <div class="navbar-links">
         <ul class="navbar-nav">
-          <li><a class="" href="<?php echo base_url(); ?>">Beranda</a></li>
+          <li><a class="" href="<?php echo base_url('beranda'); ?>">Beranda</a></li>
         </ul>
       </div>
       <div class="form-description">

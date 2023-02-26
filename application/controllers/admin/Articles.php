@@ -65,6 +65,8 @@ class Articles extends Admin_Controller
                 'date_published' => $this->input->post('date_published'),
             ];
 
+            // printr($data); die();
+
             if ($this->article_m->save($data, $id)) {
                 redirect('admin/articles');
             } else {

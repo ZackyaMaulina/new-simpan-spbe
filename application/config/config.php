@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+
 // Autoload libraries
 spl_autoload_register(function($classname){
 	if (strpos($classname, 'CI_') !== 0) {
@@ -18,7 +20,7 @@ $config['language']                = 'id';
 $config['charset']                 = 'UTF-8';
 $config['enable_hooks']            = FALSE;
 $config['subclass_prefix']         = 'MY_';
-$config['composer_autoload']       = FALSE;
+$config['composer_autoload']       = 'vendor/autoload.php';
 $config['permitted_uri_chars']     = 'a-z 0-9~%.:_\-';
 $config['allow_get_array']         = TRUE;
 $config['enable_query_strings']    = FALSE;
@@ -58,6 +60,9 @@ $config['compress_output']         = FALSE;
 $config['time_reference']          = 'local';
 $config['rewrite_short_tags']      = FALSE;
 $config['proxy_ips']               = '';
+
+
+
 
 
 /* End of file config.php */
